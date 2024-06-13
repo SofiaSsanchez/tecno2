@@ -7,7 +7,7 @@ function cambioColor() {
 
     amp = 0; // Amplitud de la señal de audio
     ampMax = 0.01; // Amplitud máxima
-    ampMin = 0.06; // Amplitud mínima (inicialmente alto para ser reemplazado)
+    ampMin = 0.04; // Amplitud mínima (inicialmente alto para ser reemplazado)
   }
 
 function cambioAmp (){
