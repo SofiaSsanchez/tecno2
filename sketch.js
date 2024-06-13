@@ -16,7 +16,7 @@ let opacidad;
 let mic; // Objeto para capturar la entrada del micrófono
 let amp = 0; // Amplitud de la señal de audio
 let ampMax = 0.01; // Amplitud máxima
-let ampMin = 0.03; // Amplitud mínima (inicialmente alto para ser reemplazado)
+let ampMin = 0.04; // Amplitud mínima (inicialmente alto para ser reemplazado)
 let frec;
 let FREC_MIN = 125;
 let FREC_MAX = 270;
