@@ -39,7 +39,7 @@ function cambioFrec (){
     } if (colorValue >= 0 && colorValue < 180){
       esColor = 2;
       colorLinea[1] = map(frec, FREC_MIN, FREC_MAX, 135, 245);
-      colorLinea[2] = map(frec, FREC_MIN, FREC_MAX, 135, 315);
+      colorLinea[2] = map(frec, FREC_MIN, FREC_MAX, 245, 315);
     }
     //console.log (colorValue);
   }
@@ -61,6 +61,6 @@ function queColorEs (){
     colorLinea[2] = random(0, 135);
   } else if (esColor == 2){
     colorLinea[1] = random(135, 245);
-    colorLinea[2] = random(135, 315);
+    colorLinea[2] = random(245, 315);
   }
 }
