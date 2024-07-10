@@ -8,15 +8,15 @@ let inclinacion2 = 20;
 let cambio;
 let cambioLinea;
 let cantColores = 4;
-let rojo = [cantColores];
-let verde = [cantColores];
-let azul = [cantColores];
+let colorLinea = [cantColores];
+let saturacion = 100;
 let opacidad;
+let esColor;
 
 //microfono 
 let mic; // Objeto para capturar la entrada del micrófono
 let amp = 0; // Amplitud de la señal de audio
-let ampMax = 0.02; // Amplitud máxima
+let ampMax = 0.04; // Amplitud máxima
 let ampMin = 0; // Amplitud mínima (inicialmente alto para ser reemplazado)
 let frec;
 let FREC_MIN = 125;
@@ -44,14 +44,13 @@ function preload() {
 function setup() {
   createCanvas(455, 600);
 
+  colorMode (HSB, 360, 100, 100);
+
   cambio = 0.0006;
   cambioLinea = random (1, 40);
 
-  for (let i = 1; i <= cantColores; i++){
-    rojo [i] = random (50, 200);
-    verde [i] = random (50, 200);
-    azul [i] = random (50, 200);
-  }
+  esColor = 1;
+  queColorEs();
 
   mic = new p5.AudioIn(); // Crear objeto de entrada de audio
 
@@ -79,11 +78,8 @@ function draw() {
   rect (0, height - 30, width, 30);
   pop ();
 
-  console.log ("Frec min", frecmin);
-  console.log ("Frec max", frecmax);
-
-  console.log ("Amp min", ampMin);
-  console.log ("Amp max", ampMax);
+  //console.log ("Amp min", ampMin);
+  //console.log ("Amp max", ampMax);
 }
 
 // FRECUENCIA
@@ -105,7 +101,6 @@ function getPitch() {
   });
 }
 
-
 //CLASIFICADOR
 function gotResult(error, results) {
   // Display error in the console
@@ -115,7 +110,5 @@ function gotResult(error, results) {
   // The results are in an array ordered by confidence.
   console.log(results);
   label = results[0].label;
-  //console.log(label);
-  
+  //console.log(label); 
 }
-
